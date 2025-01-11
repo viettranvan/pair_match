@@ -100,6 +100,21 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(width: 10),
               BaseButton(
                 onTap: () {
+                  if (index == 0) {
+                    normalModePath =
+                        List.generate(25, (index) => AssetsPath.normalMode);
+                  } else {
+                    partyModePath =
+                        List.generate(25, (index) => AssetsPath.specialMode);
+                  }
+                  setState(() {});
+                },
+                title: 'RESET',
+                color: Colors.red.withOpacity(0.7),
+              ),
+              const SizedBox(width: 10),
+              BaseButton(
+                onTap: () {
                   normalModePath =
                       List.generate(25, (index) => AssetsPath.normalMode);
                   partyModePath =
@@ -107,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   index = 0;
                   setState(() {});
                 },
-                title: 'RESET',
+                title: 'RESET ALL',
                 color: Colors.red.withOpacity(0.7),
               ),
               const Spacer(),
